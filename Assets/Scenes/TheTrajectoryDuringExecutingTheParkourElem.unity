@@ -308,6 +308,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1082020215}
   - component: {fileID: 1082020214}
+  - component: {fileID: 1082020216}
   - component: {fileID: 1082020213}
   m_Layer: 0
   m_Name: Trajectory
@@ -328,31 +329,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030b775891634871aa20100788569142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _trajectory:
+  - {fileID: 1082020214}
   _speedCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
+      inSlope: 14.966871
+      outSlope: 14.966871
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.049013328
+    - serializedVersion: 3
+      time: 0.33518177
+      value: 0.75
+      inSlope: 0.09257311
+      outSlope: 0.09257311
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.2162266
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
+      inSlope: -10.227209
+      outSlope: -10.227209
+      tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.040719125
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _speed: 1
+  _speed: 10
   _movable: {fileID: 1052410271}
 --- !u!114 &1082020214
 MonoBehaviour:
@@ -400,7 +412,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _startPoint: {x: -0.75, y: 0.55}
-  _endPoint: {x: 4.18, y: 2.57}
+  _endPoint: {x: 4.18, y: 0.55}
   _radiusPoints: 0.05
   _pointsColor: {r: 0, g: 1, b: 0.043137312, a: 1}
   _step: 0.3
@@ -419,6 +431,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1082020216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082020212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5a6db26073f4b04f942052b52240a2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animationCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _startPoint: {x: 0, y: 0}
+  _endPoint: {x: 0, y: 0}
+  _radiusPoints: 0
+  _pointsColor: {r: 0, g: 0, b: 0, a: 0}
+  _step: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

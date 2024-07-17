@@ -12,22 +12,28 @@ public class TrajectoryCurve : MonoBehaviour, IEnumerable<Vector2>
     [SerializeField] private Color _pointsColor;
     private List<Vector2> _curve = new();
     private CurveCalculator _curveCalculator = new();
-    [SerializeField] private float _step;
+    private const float STEP = 0.15f;
     private void OnValidate()
     {
         if (_curve.Count!=0)
             _curve.Clear();
-        _curve = _curveCalculator.GetCurvePoints(_startPoint, _endPoint, _animationCurve, _step);
+        _curve = _curveCalculator.GetCurvePoints(_startPoint, _endPoint, _animationCurve, STEP);
     }
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = _pointsColor;
         if (_curve.Count == 0) return;
-        for (int i = 0; i < _curve.Count; i++)
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawWireSphere(_curve[0],_radiusPoints*1.5f);
+        Gizmos.color = _pointsColor;
+        for (int i = 1; i < _curve.Count-1; i++)
         {
             Gizmos.DrawWireSphere(_curve[i],_radiusPoints);
         }
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawWireSphere(_curve[^1],_radiusPoints*1.5f);
+
+
     }
     
     public IEnumerator<Vector2> GetEnumerator()
